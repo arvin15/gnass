@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :documents
+
+  resources :authors
+
+  resources :comments
+
   root 'welcome#index'
 
-  get 'new/comment', to: 'welcome#new_comment'
+  get 'import', to: 'welcome#import'
+  post 'upload', to: 'welcome#upload'
 
   namespace :api, defaults: { format: :json } do
 

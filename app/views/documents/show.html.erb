@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @document.body %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @document.tags %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @document.company %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @document.picture %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @document.is_active %>
+</p>
+
+<p>
+  <strong>Id book:</strong>
+  <%= @document.id_book %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @document.author_id %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

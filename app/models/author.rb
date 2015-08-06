@@ -3,6 +3,10 @@ class Author < ActiveRecord::Base
 
   has_many :documents, dependent: :destroy
 
+  def full_name
+     "#{first_name} #{last_name}"
+  end
+
   scope :filter_by_email, lambda {|keyword|
     where("email LIKE ?", "%#{keyword}%")
   }
@@ -12,7 +16,7 @@ class Author < ActiveRecord::Base
   }
 
   def self.search(params = {})
-    
+
     authors = params[:author_ids].present? ? Author.where(id: params[:author_ids]) : Author.all
 
     authors = authors.filter_by_email(params[:email]) if params[:email]
